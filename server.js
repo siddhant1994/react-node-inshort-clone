@@ -14,7 +14,7 @@ const caching = {
 };
 
 app.use(express.static(path.join(__dirname, "build")));
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 if (process.env.NODE_ENV === "dev") {
     app.use((req, res, next) => {
