@@ -1,0 +1,26 @@
+<div class="hide-on-med-and-up sidebar-bg" style="display: block;">&nbsp;</div>
+
+<div class="sidebar open" style="overflow-y: scroll;">
+    <div class="lang-bar" style="">
+    <div class="lang-selector clickable">
+        <a href="/en/read"><div class="lang-en selected">English</div></a>
+        <a href="/hi/read"><div class="lang-hi ">हिन्दी</div></a>
+    </div>
+    </div>
+
+    <div>
+    <div class="category-header">Categories</div>
+    <ul class="category-list">
+        <a href="/:en/:read/:national"> <li class="active-category selected">All News</li> </a>
+    </ul>
+    </div>
+</div>
+
+
+
+<div class="header z-depth-1">
+    <div class="menu clickable">
+      <button class="c-hamburger c-hamburger--htx"><span>toggle menu</span></button><span class="unselectable">Menu</span>
+    </div>
+    <a href="/"><img src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png" class="logo"></a>
+</div>
