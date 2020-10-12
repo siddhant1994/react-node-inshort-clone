@@ -14,12 +14,13 @@
         "express": "^4.17.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.3",
         "request": "^2.88.2"
     },
     "scripts": {
         "start": "node server.js",
-        "local:serve": "npm run build && node server.js",
+        "local:serve": "npm run local:build && node server.js",
         "local:client-serve": "react-scripts start",
         "local:build": "react-scripts build",
         "local:test": "react-scripts test",

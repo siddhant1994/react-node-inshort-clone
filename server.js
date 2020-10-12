@@ -14,6 +14,7 @@ const caching = {
 };
 
 app.use(express.static(path.join(__dirname, "build")));
+
 // app.use(express.static("public"));
 
 if (process.env.NODE_ENV === "dev") {
@@ -114,6 +115,10 @@ let store = (collection, category = "all", language) => {
 };
 
 app.get("/scrape", handler);
+
+app.use((req, res, next) => {
+    res.sendFile(path.join(__dirname, ".", "build", "index.html"));
+});
 
 app.listen(PORT, () => {
     console.log("Magic happens on port " + PORT);
