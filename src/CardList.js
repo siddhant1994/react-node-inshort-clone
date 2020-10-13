@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
 import config from "./config";
-import { useParams } from "react-router-dom";
-function CardList() {
-    const params = useParams();
+
+function CardList(props) {
     const [articles, setArticles] = useState([]);
-    const [language] = useState(params.language || "en");
-    const [category] = useState(params.category || "");
 
     useEffect(() => {
+        let language = props.match.params.language || "en",
+            category = props.match.params.category || "";
+
         window
             .fetch(
                 `${config.base_url}scrape?language=${language}&category=${category}`
@@ -16,13 +16,17 @@ function CardList() {
             .then((response) => response.json())
             .then((articles) => setArticles(articles))
             .catch((e) => console.log(e));
-    }, [language, category]);
+    }, [props.match.params]);
 
     return (
         <div className="card__container">
-            {articles.map((article, index) => {
-                return <Cards article={article} key={index} />;
-            })}
+            {articles && articles.length ? (
+                articles.map((article, index) => {
+                    return <Cards article={article} key={index} />;
+                })
+            ) : (
+                <p>No articles found in {props.match.params.category}.</p>
+            )}
         </div>
     );
 }

@@ -32,7 +32,7 @@ function Cards({
                     <div>{content}</div>
                     <div className="news-card-author-time news-card-author-time-in-content">
                         <a>
-                            <span className="short">short</span>
+                            <span className="short">short &nbsp;</span>
                         </a>
                         by <span className="author">{author}</span> /
                         <span

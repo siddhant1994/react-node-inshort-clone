@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
 
-function Header() {
+function Header({ setSidebar }) {
     const [isSticky, setSticky] = useState(false);
     const ref = useRef(null);
     const handleScroll = () => {
@@ -21,15 +21,16 @@ function Header() {
 
     return (
         <div className={`header ${isSticky ? "sticky" : ""}`} ref={ref}>
-            <div>
+            <div onClick={() => setSidebar(true)}>
                 <span>Menu</span>
             </div>
-            <a className="logo__link">
+            <div className="logo__link">
                 <img
+                    alt="logo"
                     className="logo"
                     src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png"
                 />
-            </a>
+            </div>
         </div>
     );
 }
